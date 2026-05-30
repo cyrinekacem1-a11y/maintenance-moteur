@@ -36,7 +36,9 @@ COLORS = {
 def predict():
     try:
         data = request.get_json(force=True)
-
+        if isinstance(data, str):
+    import json
+    data = json.loads(data)
         # قراءة القيم
         courant     = float(data['courant'])
         vib_x       = float(data['vibration_x'])
