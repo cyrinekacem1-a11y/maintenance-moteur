@@ -35,7 +35,7 @@ COLORS = {
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        data = request.get_json()
+        data = request.get_json(force=True)
 
         # قراءة القيم
         courant     = float(data['courant'])
